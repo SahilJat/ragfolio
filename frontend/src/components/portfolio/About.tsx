@@ -4,12 +4,9 @@ export function About() {
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold text-white mb-4">About</h2>
         <p className="text-zinc-400 leading-relaxed">
-          I'm a passionate developer dedicated to creating high-performance applications.
-          With a strong foundation in both frontend and backend technologies, I enjoy
-          tackling complex problems and turning ideas into reality through clean,
-          maintainable code.
+          I am a dedicated full-stack developer with over 3 years of experience in designing and implementing high-performance web applications. My expertise spans frontend frameworks, backend systems, and cloud infrastructure.
         </p>
       </div>
     </section>
-  )
+  );
 }

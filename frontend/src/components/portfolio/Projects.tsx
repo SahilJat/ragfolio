@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 
 export function Projects() {
   return (
@@ -13,8 +13,10 @@ export function Projects() {
             whileHover={{ scale: 1.02 }}
             className="p-6 rounded-xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition-colors cursor-default"
           >
-            <h3 className="font-medium text-white text-lg">Project one</h3>
-            <p className="text-sm text-zinc-400 mt-2 leading-relaxed">Short description of the project and technologies used.</p>
+            <h3 className="font-medium text-white text-lg">Portfolio Website</h3>
+            <p className="text-sm text-zinc-400 mt-2 leading-relaxed">
+              Designed and developed a personal portfolio website using React, Tailwind CSS, and Vite. Showcases projects and professional experience.
+            </p>
           </motion.div>
 
           <motion.div
@@ -25,11 +27,13 @@ export function Projects() {
             whileHover={{ scale: 1.02 }}
             className="p-6 rounded-xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition-colors cursor-default"
           >
-            <h3 className="font-medium text-white text-lg">Project two</h3>
-            <p className="text-sm text-zinc-400 mt-2 leading-relaxed">Short description of the project and technologies used.</p>
+            <h3 className="font-medium text-white text-lg">E-commerce Platform</h3>
+            <p className="text-sm text-zinc-400 mt-2 leading-relaxed">
+              Built a scalable e-commerce platform with a React frontend and FastAPI backend, integrating payment gateways and user authentication.
+            </p>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
