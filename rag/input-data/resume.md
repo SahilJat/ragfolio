@@ -1,4 +1,3 @@
-Gemini said
 Candidate Contact and Identity Information
 
 Full Name: Sahil
