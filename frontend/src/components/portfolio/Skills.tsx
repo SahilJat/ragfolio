@@ -1,43 +1,53 @@
 import { motion } from 'framer-motion';
 
 export function Skills() {
-  const categories = [
-    { name: 'Languages', skills: ['JavaScript', 'TypeScript', 'Python', 'Go'] },
-    { name: 'Frontend', skills: ['React', 'Next.js', 'Tailwind CSS'] },
-    { name: 'Backend', skills: ['Node.js', 'FastAPI', 'PostgreSQL'] },
-    { name: 'Tools', skills: ['Git', 'Docker', 'AWS', 'Kubernetes'] },
+  const skills = [
+    {
+      category: 'Programming Languages',
+      items: ['JavaScript', 'Python', 'SQL', 'TypeScript', 'C++', 'Bash'],
+    },
+    {
+      category: 'Backend Frameworks & Tools',
+      items: ['Node.js', 'Express', 'Django', 'FastAPI', 'Pydantic'],
+    },
+    {
+      category: 'Databases',
+      items: ['PostgreSQL', 'Redis', 'Prisma ORM'],
+    },
+    {
+      category: 'DevOps & Cloud',
+      items: ['Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD'],
+    },
+    {
+      category: 'Real-Time Communication',
+      items: ['WebSockets', 'WebRTC', 'Apache Kafka'],
+    },
   ];
 
   return (
-    <section className="py-12 px-4 border-t border-zinc-800/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-white mb-6">Skills & Languages</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {categories.map((cat, idx) => (
-            <motion.div
-              key={cat.name}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <h3 className="text-sm font-medium text-zinc-500 uppercase tracking-wider mb-4 border-b border-zinc-900 pb-2">
-                {cat.name}
+    <section id="skills" className="py-24 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-4xl font-bold text-white mb-6 text-center">Skills</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {skills.map((skill, index) => (
+            <div key={index}>
+              <h3 className="text-2xl font-semibold text-blue-500 mb-4">
+                {skill.category}
               </h3>
-              <div className="flex flex-wrap gap-2">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 rounded-lg bg-zinc-900/50 border border-zinc-800 text-zinc-300 text-xs hover:border-zinc-700 transition-colors"
-                  >
-                    {skill}
-                  </span>
+              <ul className="list-disc list-inside text-zinc-400">
+                {skill.items.map((item, idx) => (
+                  <li key={idx}>{item}</li>
                 ))}
-              </div>
-            </motion.div>
+              </ul>
+            </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

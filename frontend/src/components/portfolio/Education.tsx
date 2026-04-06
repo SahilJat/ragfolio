@@ -1,28 +1,46 @@
 import { motion } from 'framer-motion';
 
 export function Education() {
+  const education = [
+    {
+      degree: '100xDevs (Advanced Architecture Cohort)',
+      institution: 'Gurugram, India',
+      duration: 'Jul 2024 — Jul 2026',
+      details:
+        'An intensive masterclass in modern software engineering, focusing on real-time protocols, distributed microservices, and modern deployment pipelines.',
+    },
+    {
+      degree: 'BTech in Civil Engineering',
+      institution: 'National Institute of Technology (NIT) Kurukshetra',
+      duration: 'May 2020 — May 2024',
+      details:
+        'Graduated from one of India’s premier engineering institutes, applying core engineering principles to software architecture.',
+    },
+  ];
+
   return (
-    <section className="py-12 px-4 border-t border-zinc-800/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-white mb-6">Education</h2>
-        <div className="space-y-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/80 hover:bg-zinc-900/50 transition-all"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-              <h3 className="text-lg font-medium text-white">Bachelor of Technology in Computer Science</h3>
-              <span className="text-sm text-zinc-500 font-mono">2020 - 2024</span>
+    <section id="education" className="py-24 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-4xl font-bold text-white mb-6 text-center">Education</h2>
+        <div className="space-y-8">
+          {education.map((edu, index) => (
+            <div key={index}>
+              <h3 className="text-2xl font-semibold text-blue-500">
+                {edu.degree}
+              </h3>
+              <p className="text-zinc-400 text-sm mb-2">
+                {edu.institution} | {edu.duration}
+              </p>
+              <p className="text-zinc-400">{edu.details}</p>
             </div>
-            <p className="text-zinc-400">National Institute of Technology</p>
-            <p className="text-sm text-zinc-500 mt-4 leading-relaxed italic">
-              Graduated with honors. Specialized in software engineering and data structures.
-            </p>
-          </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,12 +1,19 @@
+import { motion } from 'framer-motion';
+
 export function About() {
   return (
-    <section className="py-12 px-4 border-t border-zinc-800/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-white mb-4">About</h2>
-        <p className="text-zinc-400 leading-relaxed">
-          I am a dedicated full-stack developer with over 3 years of experience in designing and implementing high-performance web applications. My expertise spans frontend frameworks, backend systems, and cloud infrastructure.
+    <section id="about" className="py-24 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto text-center"
+      >
+        <h2 className="text-4xl font-bold text-white mb-6">About Me</h2>
+        <p className="text-lg text-zinc-400 leading-relaxed">
+          I am a highly capable and versatile Backend Engineer with a strong focus on building scalable, distributed, and event-driven systems. Transitioning from Civil Engineering to advanced software architecture, I bring a systems-level approach to problem-solving. My expertise spans Node.js, Python, and real-time data flows, with a passion for developer experience and resilient infrastructure.
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

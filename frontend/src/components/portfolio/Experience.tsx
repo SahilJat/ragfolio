@@ -1,48 +1,69 @@
 import { motion } from 'framer-motion';
 
 export function Experience() {
-  return (
-    <section id="experience" className="py-12 px-4 border-t border-zinc-800/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-white mb-6">Experience</h2>
-        <div className="space-y-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative pl-8 border-l border-zinc-800"
-          >
-            <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-              <h3 className="text-lg font-medium text-white">Software Engineer</h3>
-              <span className="text-sm text-zinc-500">Jan 2023 - Present</span>
-            </div>
-            <p className="text-blue-400 text-sm mb-3">TechCorp Inc.</p>
-            <p className="text-zinc-400 text-sm leading-relaxed">
-              Led the development of scalable web applications, implemented RESTful APIs, and optimized database queries, resulting in a 30% performance improvement.
-            </p>
-          </motion.div>
+  const experiences = [
+    {
+      role: 'Open Source Engineer',
+      company: 'Flagsmith',
+      location: 'London, United Kingdom (Remote)',
+      duration: 'Nov 2025 — Present',
+      responsibilities: [
+        'Stabilized and optimized core database operations and data validation layers.',
+        'Resolved PostgreSQL deadlocks by architecting a delegated transaction management system.',
+        'Implemented strict Pydantic V2 schema validations to sanitize data pipelines.',
+      ],
+    },
+    {
+      role: 'Open Source Engineer',
+      company: 'Yamada UI',
+      location: 'Tokyo, Japan (Remote)',
+      duration: 'Nov 2025 — Present',
+      responsibilities: [
+        'Engineered intelligent, backend-driven CLI utilities using Node.js and TypeScript.',
+        'Automated React component generation and project scaffolding.',
+        'Improved developer experience (DX) for global users.',
+      ],
+    },
+    {
+      role: 'Freelance Full Stack Engineer',
+      company: 'Fashion Retail Client',
+      location: 'Gurugram, India',
+      duration: 'Jan 2023 — Mar 2023',
+      responsibilities: [
+        'Architected and deployed a high-traffic e-commerce platform.',
+        'Ensured 99.9% uptime during high-pressure product launches.',
+        'Optimized server resources and frontend rendering for scalability.',
+      ],
+    },
+  ];
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative pl-8 border-l border-zinc-800"
-          >
-            <div className="absolute w-3 h-3 bg-zinc-700 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-              <h3 className="text-lg font-medium text-white">Intern Developer</h3>
-              <span className="text-sm text-zinc-500">Jun 2022 - Dec 2022</span>
+  return (
+    <section id="experience" className="py-24 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-4xl font-bold text-white mb-6 text-center">Experience</h2>
+        <div className="space-y-8">
+          {experiences.map((exp, index) => (
+            <div key={index}>
+              <h3 className="text-2xl font-semibold text-blue-500">
+                {exp.role} @ {exp.company}
+              </h3>
+              <p className="text-zinc-400 text-sm mb-2">
+                {exp.location} | {exp.duration}
+              </p>
+              <ul className="list-disc list-inside text-zinc-400">
+                {exp.responsibilities.map((resp, idx) => (
+                  <li key={idx}>{resp}</li>
+                ))}
+              </ul>
             </div>
-            <p className="text-blue-400 text-sm mb-3">Innovatech Solutions</p>
-            <p className="text-zinc-400 text-sm leading-relaxed">
-              Assisted in developing frontend components and debugging backend services, gaining hands-on experience with React and Node.js.
-            </p>
-          </motion.div>
+          ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
